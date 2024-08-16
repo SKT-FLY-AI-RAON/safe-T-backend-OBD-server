@@ -1,0 +1,35 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "title": "OBD Anomaly Detection API",
+      "description": "An API for detecting anomalies in OBD data using MQTT and Flask.",
+      "version": "1.0.0"
+    },
+    "host": "localhost:5000",
+    "schemes": [
+      "http"
+    ],
+    "paths": {
+      "/start-pedal-model": {
+        "get": {
+          "summary": "Start the pedal model",
+          "responses": {
+            "200": {
+              "description": "Pedal model started."
+            }
+          }
+        }
+      },
+      "/stop-pedal-model": {
+        "get": {
+          "summary": "Stop the pedal model",
+          "responses": {
+            "200": {
+              "description": "Pedal model stopped."
+            }
+          }
+        }
+      }
+    }
+  }
+  
