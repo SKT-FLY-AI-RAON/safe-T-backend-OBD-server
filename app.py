@@ -137,8 +137,8 @@ app = Flask(__name__)
 CORS(app)
 
 # Flask 트리거 API 경로 설정 (페달 서버 API)
-START_PEDAL_URL = "http://localhost:5001/start-pedal-model"
-STOP_PEDAL_URL = "http://localhost:5001/stop-pedal-model"
+START_PEDAL_URL = "http://localhost:6000/start-pedal-model"
+STOP_PEDAL_URL = "http://localhost:6000/stop-pedal-model"
 
 # Swagger 설정
 SWAGGER_URL = '/swagger'
@@ -229,6 +229,11 @@ def stop_pedal_model():
     """
     return jsonify({"message": "Pedal model stopped!"})
 
+# 기본 경로 설정 ("/")
+@app.route('/')
+def index():
+    return " OBD 모델 API 서버1이 실행 중입니다."
+
 # Flask 서버 시작
 if __name__ == '__main__':
     # MQTT 클라이언트 생성 및 콜백 함수 연결
@@ -241,4 +246,4 @@ if __name__ == '__main__':
 
     # Flask 서버를 비동기적으로 실행 (MQTT는 백그라운드에서 계속 실행됨)
     client.loop_start()
-    app.run(debug=True, use_reloader=False)
+    app.run(debug=True, use_reloader=False, port=5001)
