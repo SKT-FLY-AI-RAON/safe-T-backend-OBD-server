@@ -5,7 +5,7 @@
       "description": "An API for detecting anomalies in OBD data using MQTT and Flask.",
       "version": "1.0.0"
     },
-    "host": "localhost:5000",
+    "host": ":5000",
     "schemes": [
       "http"
     ],
