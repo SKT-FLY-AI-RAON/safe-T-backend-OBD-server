@@ -3,3 +3,9 @@ numpy
 torch
 scikit-learn
 joblib
+matplotlib
+flask
+flask-cors
+flask-swagger-ui
+paho-mqtt
+requests
